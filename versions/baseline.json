@@ -1,6 +1,5 @@
 {
   "default": {
-    "beicode": { "baseline": "1.0.0", "port-version": 0 },
-    "beison": { "baseline": "1.0.0", "port-version": 0 }
+    "stdsharp": { "baseline": "0.1.0", "port-version": 0 }
   }
 }
