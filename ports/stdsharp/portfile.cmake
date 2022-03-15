@@ -1,7 +1,8 @@
-vcpkg_from_git(
-	OUT_SOURCE_PATH SOURCE_PATH
-	URL https://github.com/BlurringShadow/stdsharp
-	REF fe528c72c23fc81550fc690369869d8309104068
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO BlurringShadow/stdsharp
+    REF v0.1.0
+    HEAD_REF main
 )
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
