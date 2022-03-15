@@ -1,5 +1,12 @@
 {
   "default": {
-    "stdsharp": { "baseline": "0.1.0", "port-version": 0 }
+    "stdsharp": {
+      "baseline": "0.1.0",
+      "port-version": 0
+    },
+    "boost-ext-ut": {
+      "baseline": "v1.1.9",
+      "port-version": 0
+    }
   }
 }
