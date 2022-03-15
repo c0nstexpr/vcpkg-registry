@@ -21,11 +21,9 @@ vcpkg_configure_cmake(
         -DBOOST_UT_BUILD_TESTS=OFF
 )
 vcpkg_install_cmake()
-vcpkg_copy_pdbs()
-vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/ut TARGET_PATH share/ut)
+vcpkg_cmake_config_fixup()
 
 configure_file("${LICENSE_FILE}" "${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright" COPYONLY)
 
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug
-                    ${CURRENT_PACKAGES_DIR}/lib
-)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
