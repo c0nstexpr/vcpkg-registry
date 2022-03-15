@@ -3,6 +3,7 @@ vcpkg_from_github(
     REPO boost-ext/ut
     REF v1.1.9
     HEAD_REF master
+    SHA512 0
 )
 
 vcpkg_download_distfile(LICENSE_FILE
