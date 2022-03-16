@@ -7,8 +7,8 @@ vcpkg_from_github(
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
 
-vcpkg_configure_cmake(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA)
-vcpkg_install_cmake()
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA)
+vcpkg_cmake_install()
 vcpkg_cmake_config_fixup()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
