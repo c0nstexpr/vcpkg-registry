@@ -21,7 +21,7 @@ vcpkg_cmake_configure(
         -DBOOST_UT_BUILD_TESTS=OFF
 )
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup()
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/ut)
 
 configure_file("${LICENSE_FILE}" "${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright" COPYONLY)
 
