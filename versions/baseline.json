@@ -3,10 +3,6 @@
     "stdsharp": {
       "baseline": "0.1.0",
       "port-version": 0
-    },
-    "boost-ext-ut": {
-      "baseline": "1.1.9",
-      "port-version": 0
     }
   }
 }
