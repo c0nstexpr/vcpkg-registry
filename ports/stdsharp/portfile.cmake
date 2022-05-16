@@ -1,7 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BlurringShadow/stdsharp
-    REF v0.1.0
+    REF 0.1.0
+    SHA512 51b71452f7c58f7b74f7f867c4cff7b04699cb0a4754552a41dbfde318bead31ce101ee82ff05cc314e98982f6243f2947fe0a0e5c12431e302e3131e8d32238
     HEAD_REF main
 )
 
