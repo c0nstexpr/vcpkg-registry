@@ -8,9 +8,11 @@ vcpkg_from_github(
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
 
-vcpkg_add_to_path("$ENV{PATH}")
-vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA)
+foreach(path IN $ENV{PATH})
+    vcpkg_add_to_path(${path})
+endforeach()
 
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA)
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup()
 
