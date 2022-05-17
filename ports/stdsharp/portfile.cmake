@@ -1,17 +1,16 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BlurringShadow/stdsharp
-    REF 0.1.0
-    SHA512 51b71452f7c58f7b74f7f867c4cff7b04699cb0a4754552a41dbfde318bead31ce101ee82ff05cc314e98982f6243f2947fe0a0e5c12431e302e3131e8d32238
+    REF 0.2.0
+    SHA512 338c12aae8feea637785ed3611246f70e4d2f33ed296b85e4eae1443946fa7d8a2f847e67a728d502c1653f817600d2935394e2a9c0f83a700c1fd7fbd1b43e8
     HEAD_REF main
 )
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
 
-vcpkg_find_acquire_program(GIT)
-get_filename_component(GIT_PATH "${GIT}" DIRECTORY)
-vcpkg_add_to_path("${GIT_PATH}")
+vcpkg_add_to_path("$ENV{PATH}")
 vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA)
+
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup()
 
