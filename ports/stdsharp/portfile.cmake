@@ -8,9 +8,9 @@ vcpkg_from_github(
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
 
-foreach(path IN LISTS "$ENV{PATH}")
-    vcpkg_add_to_path("${path}")
-endforeach()
+vcpkg_find_acquire_program(GIT)
+get_filename_component(GIT_DIR "${GIT}" DIRECTORY)
+vcpkg_add_to_path("${GIT_DIR}")
 
 vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA OPTIONS)
 vcpkg_cmake_install()
