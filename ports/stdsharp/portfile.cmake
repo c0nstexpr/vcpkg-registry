@@ -8,7 +8,7 @@ vcpkg_from_github(
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
 
-foreach(path IN $ENV{PATH})
+foreach(path IN LIST $ENV{PATH})
     vcpkg_add_to_path("${path}")
 endforeach()
 
