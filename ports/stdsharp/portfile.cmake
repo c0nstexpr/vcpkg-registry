@@ -8,18 +8,20 @@ vcpkg_from_github(
     HEAD_REF main
 )
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/.github")
-
 vcpkg_find_acquire_program(GIT)
 get_filename_component(GIT_DIR "${GIT}" DIRECTORY)
 vcpkg_add_to_path("${GIT_DIR}")
 
-vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA OPTIONS "-DSTDSHARP_BUILD_TEST=OFF")
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" OPTIONS "-DSTDSHARP_BUILD_TEST=OFF")
 vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/stdsharp-${ver})
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
+file(
+    REMOVE_RECURSE
+        # interface only
+        "${CURRENT_PACKAGES_DIR}/debug"
+        "${CURRENT_PACKAGES_DIR}/lib"
+)
 
 file(
 	INSTALL "${SOURCE_PATH}/LICENSE"
