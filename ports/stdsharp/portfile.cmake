@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BlurringShadow/stdsharp
-    REF 0.2.1
-    SHA512 63443c508a794c2d835122cd39c3cc3e491dd036c2c3c100c7a148488c9ec48f7cae1f245fabbe05f324ab7815d9c70769cccdd6b058eab25dd97b13516d5bad
+    REF 0.2.2
+    SHA512 87cfa41801a9e78ec2fc24fd173293cafde9a99968a9f38168bc8aab92d312ebe75a6d41b31ca14d3a48992efc484151f3a3cb14b0892008b2c3f5789c1db229
     HEAD_REF main
 )
 
@@ -12,9 +12,9 @@ vcpkg_find_acquire_program(GIT)
 get_filename_component(GIT_DIR "${GIT}" DIRECTORY)
 vcpkg_add_to_path("${GIT_DIR}")
 
-vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA OPTIONS)
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}" PREFER_NINJA OPTIONS "-DSTDSHARP_BUILD_TEST=OFF")
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup()
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/stdsharp-0.2.2)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")

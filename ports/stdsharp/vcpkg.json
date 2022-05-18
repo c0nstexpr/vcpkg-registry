@@ -1,9 +1,10 @@
 {
   "name": "stdsharp",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": [
     "fmt",
     "range-v3",
+    "ctre",
     {
       "name": "vcpkg-cmake",
       "host": true
