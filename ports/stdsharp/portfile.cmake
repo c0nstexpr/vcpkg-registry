@@ -1,16 +1,12 @@
-set(ver 0.2.7)
+set(ver 0.2.7.1)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BlurringShadow/stdsharp
     REF ${ver}
-    SHA512 a0888aa726338b7b5ee0479018a78b5b19b33426b733ffef22391c72f4e35210053e4fe6fd1d0df133e380683930dfd3aa61388b55f72426557edd1ae8360dff
+    SHA512 f0dac24015227ff39fb11ce811a12416aa6ca712536267a08570b42735fc70291f8d9c4accbce0595b84facec729c67d7efe72432f71e32e124fc920fd4a7ae9
     HEAD_REF main
 )
-
-vcpkg_find_acquire_program(GIT)
-get_filename_component(GIT_DIR "${GIT}" DIRECTORY)
-vcpkg_add_to_path("${GIT_DIR}")
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
