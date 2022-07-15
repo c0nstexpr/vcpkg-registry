@@ -1,10 +1,10 @@
-set(ver 0.2.7.4)
+set(ver 0.2.7.8)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO BlurringShadow/stdsharp
     REF ${ver}
-    SHA512 477face482753055d2ef87e847408ec52e48bf689dbd27110b6630a5c3127674da4895e13bd01767d9b65a1ac0dc0266b1c2ff7ad018f3d210d96e149ebe32b5
+    SHA512 ac99a2c04b94aa5bb5e712192f9277b3fcd2419a01809b99e822f2f9fcb93b08068b9904174f22a552000869ddebf82bdf029f0ee315673c0d521af76d21d610
     HEAD_REF main
 )
 
