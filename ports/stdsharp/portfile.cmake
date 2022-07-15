@@ -1,4 +1,4 @@
-set(ver 0.2.7.8)
+set(ver 0.2.8)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
