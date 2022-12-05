@@ -55,6 +55,10 @@
     {
       "version": "0.4.2.1",
       "git-tree": "c6f746df6459312a27875374487f7951c8d2f19b"
+    },
+    {
+      "version": "0.4.3",
+      "git-tree": "cf4046232a672e53b15cbccd3b48723a671ae9ca"
     }
   ]
 }
