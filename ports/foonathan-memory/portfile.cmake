@@ -31,22 +31,11 @@ vcpkg_copy_pdbs()
 # for CMake-based project.
 file(COPY ${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan
      DESTINATION ${CURRENT_PACKAGES_DIR}/include)
-file(COPY ${CURRENT_PACKAGES_DIR}/include/foonathan_memory/config_impl.hpp
-     DESTINATION ${CURRENT_PACKAGES_DIR}/include/foonathan/memory)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/include/foonathan_memory)
 vcpkg_replace_string(
   ${CURRENT_PACKAGES_DIR}/share/foonathan_memory/foonathan_memory-config.cmake
   "\${_IMPORT_PREFIX}/include/foonathan_memory" "\${_IMPORT_PREFIX}/include")
 # Place header files into the right folders - Done!
-
-# The Debug version of this lib is built with: #define
-# FOONATHAN_MEMORY_DEBUG_FILL 1 and Release version is built with: #define
-# FOONATHAN_MEMORY_DEBUG_FILL 0 We only have the Release version header files
-# installed, however.
-vcpkg_replace_string(
-  ${CURRENT_PACKAGES_DIR}/include/foonathan/memory/detail/debug_helpers.hpp
-  "#if FOONATHAN_MEMORY_DEBUG_FILL"
-  "#ifndef NDEBUG //#if FOONATHAN_MEMORY_DEBUG_FILL")
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include
      ${CURRENT_PACKAGES_DIR}/debug/share)
