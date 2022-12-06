@@ -3,6 +3,10 @@
     "stdsharp": {
       "baseline": "0.4.3",
       "port-version": 0
+    },
+    "foonathan-memory": {
+      "baseline": "0.7-2",
+      "port-version": 0
     }
   }
 }
