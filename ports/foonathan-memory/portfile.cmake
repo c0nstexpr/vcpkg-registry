@@ -18,24 +18,9 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
-if(EXISTS ${CURRENT_PACKAGES_DIR}/cmake)
-  vcpkg_cmake_config_fixup(CONFIG_PATH cmake TARGET_PATH share/foonathan_memory)
-elseif(EXISTS ${CURRENT_PACKAGES_DIR}/share/foonathan_memory/cmake)
-  vcpkg_cmake_config_fixup(CONFIG_PATH share/foonathan_memory/cmake TARGET_PATH
-                           share/foonathan_memory)
-endif()
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/foonathan_memory/cmake)
 
 vcpkg_copy_pdbs()
-
-# Place header files into the right folders The original layout is not a problem
-# for CMake-based project.
-file(COPY ${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan
-     DESTINATION ${CURRENT_PACKAGES_DIR}/include)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/include/foonathan_memory)
-vcpkg_replace_string(
-  ${CURRENT_PACKAGES_DIR}/share/foonathan_memory/foonathan_memory-config.cmake
-  "\${_IMPORT_PREFIX}/include/foonathan_memory" "\${_IMPORT_PREFIX}/include")
-# Place header files into the right folders - Done!
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include
      ${CURRENT_PACKAGES_DIR}/debug/share)
