@@ -18,38 +18,22 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
-vcpkg_cmake_config_fixup(CONFIG_PATH lib/foonathan_memory/cmake)
+vcpkg_cmake_config_fixup(PACKAGE_NAME foonathan_memory)
 
 vcpkg_copy_pdbs()
 
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include
-     ${CURRENT_PACKAGES_DIR}/debug/share)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/lib/foonathan_memory")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
 
-file(REMOVE ${CURRENT_PACKAGES_DIR}/debug/LICENSE
-     ${CURRENT_PACKAGES_DIR}/debug/README.md ${CURRENT_PACKAGES_DIR}/LICENSE
-     ${CURRENT_PACKAGES_DIR}/README.md)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/share/foonathan_memory")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/lib/foonathan_memory")
 
-if(NOT VCPKG_CMAKE_SYSTEM_NAME OR VCPKG_CMAKE_SYSTEM_NAME STREQUAL
-                                  "WindowsStore")
-  set(EXECUTABLE_SUFFIX ".exe")
-else()
-  set(EXECUTABLE_SUFFIX "")
-endif()
+file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 
-if(EXISTS ${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX})
-  file(COPY ${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX}
-       DESTINATION ${CURRENT_PACKAGES_DIR}/tools/${PORT})
-  vcpkg_copy_tool_dependencies(${CURRENT_PACKAGES_DIR}/tools/${PORT})
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include/foonathan_memory")
 
-  if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
-    file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin
-         ${CURRENT_PACKAGES_DIR}/debug/bin)
-  else()
-    file(REMOVE ${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX}
-         ${CURRENT_PACKAGES_DIR}/debug/bin/nodesize_dbg${EXECUTABLE_SUFFIX})
-  endif()
-endif()
+vcpkg_copy_tools(TOOL_NAMES nodesize_dbg AUTO_CLEAN)
 
 # Handle copyright
-configure_file(${SOURCE_PATH}/LICENSE
-               ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
