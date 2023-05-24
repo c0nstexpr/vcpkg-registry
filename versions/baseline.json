@@ -1,11 +1,7 @@
 {
   "default": {
     "stdsharp": {
-      "baseline": "0.4.4",
-      "port-version": 0
-    },
-    "foonathan-memory": {
-      "baseline": "2022-11-28",
+      "baseline": "0.6.0",
       "port-version": 0
     }
   }
