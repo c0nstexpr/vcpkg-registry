@@ -5,6 +5,7 @@
     "fmt",
     "range-v3",
     "ctre",
+    "nameof",
     {
       "name": "vcpkg-cmake",
       "host": true
