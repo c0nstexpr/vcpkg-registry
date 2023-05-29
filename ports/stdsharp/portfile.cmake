@@ -1,4 +1,4 @@
-set(ver 0.6.2)
+set(ver 0.6.3)
 
 vcpkg_from_github(
   OUT_SOURCE_PATH
@@ -8,7 +8,7 @@ vcpkg_from_github(
   REF
   ${ver}
   SHA512
-  a20d1b53e6a14468ff4cbe4f0af8fa10ea456b53aab479906e0d6f107fed63e1d446a1b53cc31088362799892f00f1379ddccce55ae375f131919287af024a0f
+  0b91879269014b03bd3b79616c5399e9ac32c71d9be6d64e233b8c4807b270c279365daef4c02bf76a1d04131c0838010a3d64b6efc021d8bdbaca7a3d9fb6a4
   HEAD_REF
   main)
 
