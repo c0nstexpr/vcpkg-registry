@@ -1,10 +1,12 @@
 set(ver 0.6.4)
 
+set(repo_name stdsharp)
+
 vcpkg_from_github(
   OUT_SOURCE_PATH
   SOURCE_PATH
   REPO
-  BlurringShadow/stdsharp
+  BlurringShadow/${repo_name}
   REF
   ${ver}
   SHA512
@@ -13,10 +15,10 @@ vcpkg_from_github(
   main)
 
 vcpkg_cmake_configure(
-  SOURCE_PATH "${SOURCE_PATH}" OPTIONS -DSTDSHARP_BUILD_TEST=OFF
-  -DSTDSHARP_INCLUDE_AS_SYSTEM=OFF)
+  SOURCE_PATH "${SOURCE_PATH}" OPTIONS -D${repo_name}_BUILD_TEST=OFF
+  -D${repo_name}_INCLUDE_AS_SYSTEM=OFF)
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/stdsharp-${ver})
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/${repo_name}-${ver})
 
 file(REMOVE_RECURSE
      # interface only
