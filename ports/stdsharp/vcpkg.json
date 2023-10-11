@@ -1,10 +1,10 @@
 {
   "name": "stdsharp",
-  "version": "0.6.4",
+  "version": "0.7.0",
   "dependencies": [
-    "fmt",
     "range-v3",
     "ctre",
+    "ms-gsl",
     "nameof",
     {
       "name": "vcpkg-cmake",
