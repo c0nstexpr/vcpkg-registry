@@ -1,4 +1,4 @@
-set(ver 0.7.0)
+set(ver 0.8.0)
 
 set(repo_name stdsharp)
 
@@ -10,7 +10,7 @@ vcpkg_from_github(
   REF
   ${ver}
   SHA512
-  d309b032655e7c3b2380e63fb06f9664a8c838987597484c6445bf74fc90d5c500dcba92a6a3f38e22d7a654ba92bf0e582753a4d4f3e5a0ce662a234c2a14c2
+  8d7f6f1e8c5669f8664bd08137cd8ca6356e2446021e3699848f51178e8362659e054f5b19b09c8533627c1a6af7eea406e42ec16eb7c2e522d75989830eec16
   HEAD_REF
   main)
 
