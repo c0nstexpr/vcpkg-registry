@@ -6,7 +6,7 @@ vcpkg_from_github(
   OUT_SOURCE_PATH
   SOURCE_PATH
   REPO
-  BlurringShadow/${repo_name}
+  c0nstexpr/${repo_name}
   REF
   ${ver}
   SHA512
