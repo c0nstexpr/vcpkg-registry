@@ -1,4 +1,4 @@
-set(ver 0.8.6)
+set(ver 0.8.7)
 
 set(repo_name stdsharp)
 
