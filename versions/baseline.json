@@ -1,7 +1,7 @@
 {
   "default": {
     "stdsharp": {
-      "baseline": "0.8.7",
+      "baseline": "0.8.8",
       "port-version": 0
     }
   }
